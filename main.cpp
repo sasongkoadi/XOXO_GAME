@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     int array[10][10],var,kordinat_x,kordinat_y;
     string kordinat="x", result, angka[100][100],ulang;
     var=0;
-    bool hasil[100];
+    bool hasil[100],pemenang = false;
     
     
     /*
@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
     }
     
 
-    for (int board=1; board<=5; board++) {
+    for (int board=1; board<=4; board++) {
         
         
         
@@ -148,6 +148,30 @@ int main(int argc, const char * argv[]) {
             
         }
         
+        
+        hasil[0]=(angka[0][0]=="X")&&(angka[0][1]=="X")&&(angka[0][2]=="X");
+        hasil[1]=(angka[1][0]=="X")&&(angka[1][1]=="X")&&(angka[1][2]=="X");
+        hasil[2]=(angka[2][0]=="X")&&(angka[2][1]=="X")&&(angka[2][2]=="X");
+        hasil[3]=angka[0][0]=="X"&&angka[1][0]=="X"&&angka[2][0]=="X";
+        hasil[4]=angka[0][1]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
+        hasil[5]=angka[0][2]=="X"&&angka[1][2]=="X"&&angka[2][2]=="X";
+        hasil[6]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
+        hasil[7]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
+        
+        pemenang=hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6]||hasil[7];
+        if (pemenang==1) {
+            
+            //int point=1;
+            
+            //int total;
+            
+            //total += point;
+            
+            cout << "Player 1 win" << endl;
+            
+            break;
+            
+        }
     
         
         cout << "PLAYER 2" << endl;
@@ -183,67 +207,39 @@ int main(int argc, const char * argv[]) {
         }
         
         
-
+        hasil[8]=(angka[0][0]=="O")&&(angka[0][1]=="O")&&(angka[0][2]=="O");
+        hasil[9]=(angka[1][0]=="O")&&(angka[1][1]=="O")&&(angka[1][2]=="O");
+        hasil[10]=(angka[2][0]=="O")&&(angka[2][1]=="O")&&(angka[2][2]=="O");
+        hasil[11]=angka[0][0]=="O"&&angka[1][0]=="O"&&angka[2][0]=="O";
+        hasil[12]=angka[0][1]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
+        hasil[13]=angka[0][2]=="O"&&angka[1][2]=="O"&&angka[2][2]=="O";
+        hasil[14]=angka[0][0]=="O"&&angka[1][1]=="O"&&angka[2][2]=="O";
+        hasil[15]=angka[0][2]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
+        
+        pemenang=hasil[9]||hasil[10]||hasil[11]||hasil[12]||hasil[13]||hasil[14]||hasil[15]||hasil[8];
+        
+        if (pemenang==1) {
+            
+          //  int point=1;
+            
+          //  int total;
+            
+          //  total += point;
+            
+            cout << "Player 2 Wins" << endl;
+            
+        }
       
       
     }
     
-    hasil[0]=(angka[0][0]=="X")&&(angka[0][1]=="X")&&(angka[0][2]=="X");
-    hasil[1]=(angka[1][0]=="X")&&(angka[1][1]=="X")&&(angka[1][2]=="X");
-    hasil[2]=(angka[2][0]=="X")&&(angka[2][1]=="X")&&(angka[2][2]=="X");
-    hasil[3]=angka[0][0]=="X"&&angka[1][0]=="X"&&angka[2][0]=="X";
-    hasil[4]=angka[0][1]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
-    hasil[5]=angka[0][2]=="X"&&angka[1][2]=="X"&&angka[2][2]=="X";
-    hasil[6]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
-    hasil[7]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
     
-    hasil[8]=(angka[0][0]=="O")&&(angka[0][1]=="O")&&(angka[0][2]=="O");
-    hasil[9]=(angka[1][0]=="O")&&(angka[1][1]=="O")&&(angka[1][2]=="O");
-    hasil[10]=(angka[2][0]=="O")&&(angka[2][1]=="O")&&(angka[2][2]=="O");
-    hasil[11]=angka[0][0]=="O"&&angka[1][0]=="O"&&angka[2][0]=="O";
-    hasil[12]=angka[0][1]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
-    hasil[13]=angka[0][2]=="O"&&angka[1][2]=="O"&&angka[2][2]=="O";
-    hasil[14]=angka[0][0]=="O"&&angka[1][1]=="O"&&angka[2][2]=="O";
-    hasil[15]=angka[0][2]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
-    
-    /*
-    cout << hasil[0]<<endl;
-    cout << hasil[1]<<endl;
-    cout << hasil[2]<<endl;
-    cout << hasil[3]<<endl;
-    cout << hasil[4]<<endl;
-    cout << hasil[5]<<endl;
-    cout << hasil[6]<<endl;
-     */
-    
-    
-    
-    if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6]||hasil[7]) {
-        
-        int point=1;
-        
-        int total;
-        
-        total += point;
-    
-        cout << "Poin Player 1 = " << total << endl;
+    if (pemenang==0) {
+        cout << " DRAW " << endl;
     }
-    
-    else if (hasil[9]||hasil[10]||hasil[11]||hasil[12]||hasil[13]||hasil[14]||hasil[15]||hasil[8]) {
-    
-    int point=1;
-    
-    int total;
-    
-    total += point;
-    
-    cout << "Poin Player @ = " << total << endl;
 
     
-    }
-    else
     
-    cout << " DRAW " << endl;
 
 
     
