@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
     }
     
 
-    for (int board=1; board<=9; board++) {
+    for (int board=1; board<=5; board++) {
         
         
         
@@ -197,6 +197,16 @@ int main(int argc, const char * argv[]) {
     hasil[6]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
     hasil[7]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
     
+    hasil[8]=(angka[0][0]=="X")&&(angka[0][1]=="X")&&(angka[0][2]=="X");
+    hasil[9]=(angka[1][0]=="X")&&(angka[1][1]=="X")&&(angka[1][2]=="X");
+    hasil[10]=(angka[2][0]=="X")&&(angka[2][1]=="X")&&(angka[2][2]=="X");
+    hasil[11]=angka[0][0]=="X"&&angka[1][0]=="X"&&angka[2][0]=="X";
+    hasil[12]=angka[0][1]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
+    hasil[13]=angka[0][2]=="X"&&angka[1][2]=="X"&&angka[2][2]=="X";
+    hasil[14]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
+    hasil[15]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
+    
+    /*
     cout << hasil[0]<<endl;
     cout << hasil[1]<<endl;
     cout << hasil[2]<<endl;
@@ -204,6 +214,17 @@ int main(int argc, const char * argv[]) {
     cout << hasil[4]<<endl;
     cout << hasil[5]<<endl;
     cout << hasil[6]<<endl;
+     */
+    
+    
+    
+    if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6]) {
+    
+        cout << "Player 1 Pemenangannya"<< endl;
+    }
+     else if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6])
+    
+        cout << "Player 2 Pemenangannya"<< endl;
     
    
 
