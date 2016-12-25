@@ -197,14 +197,14 @@ int main(int argc, const char * argv[]) {
     hasil[6]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
     hasil[7]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
     
-    hasil[8]=(angka[0][0]=="X")&&(angka[0][1]=="X")&&(angka[0][2]=="X");
-    hasil[9]=(angka[1][0]=="X")&&(angka[1][1]=="X")&&(angka[1][2]=="X");
-    hasil[10]=(angka[2][0]=="X")&&(angka[2][1]=="X")&&(angka[2][2]=="X");
-    hasil[11]=angka[0][0]=="X"&&angka[1][0]=="X"&&angka[2][0]=="X";
-    hasil[12]=angka[0][1]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
-    hasil[13]=angka[0][2]=="X"&&angka[1][2]=="X"&&angka[2][2]=="X";
-    hasil[14]=angka[0][0]=="X"&&angka[1][1]=="X"&&angka[2][2]=="X";
-    hasil[15]=angka[0][2]=="X"&&angka[1][1]=="X"&&angka[2][1]=="X";
+    hasil[8]=(angka[0][0]=="O")&&(angka[0][1]=="O")&&(angka[0][2]=="O");
+    hasil[9]=(angka[1][0]=="O")&&(angka[1][1]=="O")&&(angka[1][2]=="O");
+    hasil[10]=(angka[2][0]=="O")&&(angka[2][1]=="O")&&(angka[2][2]=="O");
+    hasil[11]=angka[0][0]=="O"&&angka[1][0]=="O"&&angka[2][0]=="O";
+    hasil[12]=angka[0][1]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
+    hasil[13]=angka[0][2]=="O"&&angka[1][2]=="O"&&angka[2][2]=="O";
+    hasil[14]=angka[0][0]=="O"&&angka[1][1]=="O"&&angka[2][2]=="O";
+    hasil[15]=angka[0][2]=="O"&&angka[1][1]=="O"&&angka[2][1]=="O";
     
     /*
     cout << hasil[0]<<endl;
@@ -218,15 +218,32 @@ int main(int argc, const char * argv[]) {
     
     
     
-    if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6]) {
+    if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6]||hasil[7]) {
+        
+        int point=1;
+        
+        int total;
+        
+        total += point;
     
-        cout << "Player 1 Pemenangannya"<< endl;
+        cout << "Poin Player 1 = " << total << endl;
     }
-     else if (hasil[0]||hasil[1]||hasil[2]||hasil[3]||hasil[4]||hasil[5]||hasil[6])
     
-        cout << "Player 2 Pemenangannya"<< endl;
+    else if (hasil[9]||hasil[10]||hasil[11]||hasil[12]||hasil[13]||hasil[14]||hasil[15]||hasil[8]) {
     
-   
+    int point=1;
+    
+    int total;
+    
+    total += point;
+    
+    cout << "Poin Player @ = " << total << endl;
+
+    
+    }
+    else
+    
+    cout << " DRAW " << endl;
 
 
     
